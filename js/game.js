@@ -57,11 +57,11 @@ class Game {
 
 	build() {
 		main.classList.add(`grid-${this.sizeForCards}`);
-		main.innerHTML += '<div class="timer"><span id="minute"></span>:<span id="second"></span></div>';
+		main.innerHTML += '<section class="timer"><span id="minute"></span>:<span id="second"></span></section>';
 		
 		while (this.levelValue > 0) {
 			this.cardValue = Math.round(Math.random() * (this.arrayForCardsValue.length - 1));
-			main.innerHTML += `<div class="wrapper item-${this.sizeForCards}"><div class="card" data-value=${this.arrayForCardsValue[this.cardValue]}><div class="front ${this.skirtUrl}"></div><div class="back ${this.arrayForCardsValue[this.cardValue]}"></div></div></div>`;
+			main.innerHTML += `<section class="wrapper item-${this.sizeForCards}"><article class="card" data-value=${this.arrayForCardsValue[this.cardValue]}><section class="front ${this.skirtUrl}"></section><section class="back ${this.arrayForCardsValue[this.cardValue]}"></section></article></section>`;
             this.arrayForCardsValue.splice(this.cardValue, 1);
             this.levelValue = this.levelValue - 1;
 		}
@@ -140,7 +140,7 @@ class Game {
 
 	victory() {
 		main.classList.remove(`grid-${this.sizeForCards}`);
-		main.innerHTML = `<div class="victory"><h1 class="victory">Great job, our congratulations. You win!</h1><h2>Your time is <span class="info">${this.recordTime}</span></h2><h3>Not bad, good. But I know You can better!</h3></div><button class="restart">Play again</button>`;
+		main.innerHTML = `<section class="victory"><h1 class="victory">Great job, our congratulations. You win!</h1><h2>Your time is <span class="info">${this.recordTime}</span></h2><h3>Not bad, good. But I know You can better!</h3></section><button class="restart">Play again</button>`;
 
 		const restart = document.querySelector('.restart');
 		restart.addEventListener('click', () => {

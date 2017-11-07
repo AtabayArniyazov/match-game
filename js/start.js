@@ -27,6 +27,8 @@ class Start {
 		startGame.addEventListener('click', (event) => {
 			event.stopPropagation();
 			main.innerHTML = '';
+			main.removeAttribute("class");
+			main.className = 'main-style';
 			let initializeGame = new Game(this.level, this.skirt);
 			initializeGame.init();
 		});

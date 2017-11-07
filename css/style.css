@@ -187,7 +187,7 @@ p {
     transition: transform 1s;
 }
 
-.card div {
+.card section {
     position: absolute;
     top: 0;
     left: 0;
