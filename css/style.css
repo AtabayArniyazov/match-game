@@ -97,6 +97,12 @@ p {
     text-align: center;
 }
 
+main.main-style img {
+    width: 20%;
+    margin: 10px 6.6666%;
+    float: left;
+}
+
 .grid-for-game-place {
     display: grid;
     grid-template-columns: auto;
