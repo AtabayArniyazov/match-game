@@ -16,22 +16,22 @@ class Game {
 		this.current = null;
 		this.point = null;
 		this.recordTime = null;
-		this.backCardClass = null;
+		this.backCardStyle = null;
 	}
 
 	skirtChoice() {
 		switch (this.skirt) {
 			case 1:
 				this.skirtUrl = 'skirt-1'
-				this.backCardClass = 'back-card-1';
+				this.backCardStyle = 'back-card-1';
 				break;
 			case 2:
 				this.skirtUrl = 'skirt-2'
-				this.backCardClass = 'back-card-2';
+				this.backCardStyle = 'back-card-2';
 				break;
 			case 3:
 				this.skirtUrl = 'skirt-3'
-				this.backCardClass = 'back-card-3';
+				this.backCardStyle = 'back-card-3';
 				break;
 		}
 	}
@@ -65,7 +65,7 @@ class Game {
 		
 		while (this.levelValue > 0) {
 			this.cardValue = Math.round(Math.random() * (this.arrayForCardsValue.length - 1));
-			main.innerHTML += `<section class="wrapper item-${this.sizeForCards}"><article class="card" data-value=${this.arrayForCardsValue[this.cardValue]}><section class="front ${this.skirtUrl}"></section><section class="back ${this.backCardClass} ${this.arrayForCardsValue[this.cardValue]}"></section></article></section>`;
+			main.innerHTML += `<section class="wrapper item-${this.sizeForCards}"><article class="card" data-value=${this.arrayForCardsValue[this.cardValue]}><section class="front ${this.skirtUrl}"></section><section class="back ${this.backCardStyle} ${this.arrayForCardsValue[this.cardValue]}"></section></article></section>`;
             this.arrayForCardsValue.splice(this.cardValue, 1);
             this.levelValue = this.levelValue - 1;
 		}
